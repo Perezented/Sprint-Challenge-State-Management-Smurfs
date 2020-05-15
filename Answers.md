@@ -18,4 +18,4 @@ Redux Thunk is a middleware that lets you call action creators that return a fun
 
 ### 1. What is your favorite state management system you've learned and this sprint? Please explain why!
 
-Context, it feels like a simplier version of what needs to be done.
+Context, it feels like a simpler version of what needs to be done.
