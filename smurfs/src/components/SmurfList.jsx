@@ -20,6 +20,18 @@ const SmurfList = (props) => {
     return (
         <section>
             <h2>SmurfList</h2>
+            {props.smurfsList &&
+                props.smurfsList.map((value) => {
+                    console.log(value);
+                    return (
+                        <div key={value.id}>
+                            <h3>Hey there! My name is {value.name}!</h3>
+                            <p>
+                                My age is {value.age}, and I am {value.height}{' '}
+                            </p>
+                        </div>
+                    );
+                })}
         </section>
     );
 };
