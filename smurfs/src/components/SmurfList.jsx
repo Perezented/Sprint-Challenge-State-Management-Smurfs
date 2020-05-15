@@ -19,7 +19,7 @@ const SmurfList = (props) => {
             <br />
             <p> Add a smurf to the village:</p>
             <AddSmurf smurfList={props.smurfsList} />
-            <h2>SmurfList</h2>
+            <h2>Smurf List</h2>
             {props.smurfsList &&
                 props.smurfsList.map((value) => {
                     console.log(value);

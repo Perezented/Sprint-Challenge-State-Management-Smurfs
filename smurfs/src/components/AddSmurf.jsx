@@ -4,19 +4,20 @@ import { pushData } from '../store/actions';
 import { useState } from 'react';
 import { useEffect } from 'react';
 const AddSmurf = (props) => {
-    console.log('AddSmurf props', props);
+    // console.log('AddSmurf props', props);
 
     const [smurf, setSmurf] = useState();
 
-    useEffect(() => {
-        props.pushData();
-    }, props);
+    // useEffect(() => {
+    //     props.pushData();
+    // }, [props.pushData()]);
 
     const handleChanges = (e) => {
         e.preventDefault();
         const newerSmurf = {
             ...smurf,
             [e.target.name]: e.target.value,
+            height: e.target.value + 'cm',
         };
         return setSmurf(newerSmurf);
     };
@@ -29,6 +30,7 @@ const AddSmurf = (props) => {
         <form
             onSubmit={(e) => {
                 onSubmit();
+                e.preventDefault();
             }}
         >
             <label htmlFor="name">Add Smurf Name: </label>
@@ -37,7 +39,6 @@ const AddSmurf = (props) => {
                 name="name"
                 placeholder="New Smurf Here"
                 onChange={handleChanges}
-                value={props.name}
             />
             <label htmlFor="age"> Smurf Age:</label>
             <input
@@ -48,15 +49,13 @@ const AddSmurf = (props) => {
             />
             <label htmlFor="height"> Height: </label>
             <input
-                type="number"
+                type="text"
                 name="height"
                 placeholder="Height"
                 onChange={handleChanges}
             />
-            <label htmlFor="id">
-                <input type="hidden" id="id" name="id" value={Date.now()} />
-            </label>
-            <button>Submit Smurf</button>
+
+            <button type="submit">Submit Smurf</button>
         </form>
     );
 };

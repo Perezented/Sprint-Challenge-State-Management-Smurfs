@@ -38,7 +38,7 @@ export const pushData = (newSmurf) => {
                 console.log(res);
                 dispatch({
                     type: PUSH_DATA_SUCCESS,
-                    payload: res.data,
+                    payload: res,
                 });
             })
             .catch((err) => {
