@@ -10,7 +10,7 @@ const initialState = {
     smurfsList: '',
 };
 
-const getSmurfData = (state = initialState, action) => {
+const getSmurfDataReducer = (state = initialState, action) => {
     switch (action.type) {
         // For data fetch failure
         case FETCH_DATA_FAILURE:
@@ -41,4 +41,4 @@ const getSmurfData = (state = initialState, action) => {
     }
 };
 
-export default getSmurfData;
+export default getSmurfDataReducer;
