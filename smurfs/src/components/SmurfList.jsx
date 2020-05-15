@@ -17,6 +17,10 @@ const SmurfList = (props) => {
 
 const mapStateToProps = (state) => {
     console.log('SmurfList mSTP: ', state);
-    return {};
+    return {
+        isFetching: state.getSmurfDataReducer.isFetching,
+        error: state.getSmurfDataReducer.error,
+        smurfsList: state.getSmurfDataReducer.smurfsList,
+    };
 };
 export default connect(mapStateToProps, { fetchData })(SmurfList);

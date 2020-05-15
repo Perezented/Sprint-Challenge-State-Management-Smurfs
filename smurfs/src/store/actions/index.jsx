@@ -15,7 +15,7 @@ export const fetchData = () => {
 
                 dispatch({
                     type: FETCH_DATA_SUCCESS,
-                    payload: res,
+                    payload: res.data,
                 });
             })
             .catch((err) => {
