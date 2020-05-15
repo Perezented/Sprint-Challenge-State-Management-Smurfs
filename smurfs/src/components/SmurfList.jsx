@@ -12,7 +12,16 @@ const SmurfList = (props) => {
         props.fetchData();
     }, []);
 
-    return <h1>test</h1>;
+    props.smurfsList.map((value) => {
+        console.log(value);
+        console.log(value.name);
+    });
+
+    return (
+        <section>
+            <h2>SmurfList</h2>
+        </section>
+    );
 };
 
 const mapStateToProps = (state) => {

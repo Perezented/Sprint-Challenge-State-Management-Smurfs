@@ -7,17 +7,17 @@ import {
 const initialState = {
     isFetching: false,
     error: '',
-    smurfsList: '',
+    smurfsList: [],
 };
 
 const getSmurfDataReducer = (state = initialState, action) => {
     switch (action.type) {
-        // For data fetch failure
-        case FETCH_DATA_FAILURE:
+        // When data fetch is started
+        case FETCH_DATA_START:
             return {
                 ...state,
-                error: action.payload,
-                isFetching: false,
+                isFetching: true,
+                error: '',
             };
         // When data fetch is successful
         case FETCH_DATA_SUCCESS:
@@ -27,13 +27,12 @@ const getSmurfDataReducer = (state = initialState, action) => {
                 isFetching: false,
                 smurfsList: action.payload,
             };
-        // When data fetch is started
-        case FETCH_DATA_START:
+        // For data fetch failure
+        case FETCH_DATA_FAILURE:
             return {
                 ...state,
-                isFetching: true,
-                error: '',
-                smurfsList: action.payload,
+                error: action.payload,
+                isFetching: false,
             };
 
         default:
